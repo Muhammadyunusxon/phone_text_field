@@ -93,6 +93,11 @@ class PhoneTextField extends StatefulWidget {
   /// Default is Locale('en','')
   final Locale locale;
 
+  /// Localalization.
+  ///
+  /// Default is Locale('en','')
+  final int? maxLength;
+
   /// to required validation number.
   ///
   /// Default is isRequired : true
@@ -139,6 +144,7 @@ class PhoneTextField extends StatefulWidget {
     this.isRequired = true,
     this.showCountryCodeAsIcon = false,
     this.initialValue,
+    this.maxLength,
     //this.controller,
     this.focusNode,
     this.decoration = const InputDecoration(labelText: "Phone number"),
@@ -303,7 +309,8 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
           return null;
         }
       },
-      maxLength: widget.disableLengthCheck ? null : maxLength,
+      maxLength:
+          widget.disableLengthCheck ? null : widget.maxLength ?? maxLength,
       keyboardType: TextInputType.phone,
       enabled: widget.enabled,
       autofocus: widget.autofocus,
