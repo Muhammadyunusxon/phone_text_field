@@ -342,7 +342,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
 
   Widget _buildCountryCodeButton() {
     return InkWell(
-      onTap: widget.enabled ? _changeCountry : null,
+      onTap: widget.enabled && countries.length > 1 ? _changeCountry : null,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: Row(
@@ -355,7 +355,7 @@ class _PhoneTextFieldState extends State<PhoneTextField> {
                 style: widget.textStyle,
               ),
             ),
-            widget.dropdownIcon,
+            if (countries.length > 1) widget.dropdownIcon,
           ],
         ),
       ),
