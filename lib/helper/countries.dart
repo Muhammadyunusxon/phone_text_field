@@ -1926,8 +1926,8 @@ class CountriesHelper {
       flag: "🇻🇳",
       code: "VN",
       dialCode: "84",
-      minLength: 11,
-      maxLength: 11,
+      minLength: 9,
+      maxLength: 10,
     ),
     Country(
       name: "Virgin Islands, British",
